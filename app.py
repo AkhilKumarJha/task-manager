@@ -27,7 +27,7 @@ def index():
             db.session.commit()
             return redirect('/')
 
-        except Exception:
+        except:
             return 'There Was An Issue Adding Text'
 
     else:
@@ -42,7 +42,7 @@ def delete(id):
         db.session.delete(task_to_delete)
         db.session.commit()
         return redirect('/')
-    except Exception:
+    except:
         return 'There was a problem deleting that task'
 
 @app.route('/update/<int:id>', methods=['GET','POST'])
